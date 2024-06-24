@@ -26,7 +26,7 @@ const thumbnailImagesOverlay = $(
 
 // Select the main image elements in both the original and overlay sections
 const selectedSneakerOriginal = $(".product-page #selected-sneaker");
-const selectedSneakerOverlay = $(".product-images-overlay #selected-sneaker");
+const selectedSneakerOverlay = $(".product-images-overlay #selected-sneaker-overlay");
 
 // Select next and previous buttons
 const prevButton = $(".prevButton");
