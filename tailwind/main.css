@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base font size */
+html {
+  @apply text-[62.5%];
+}
+
+/* Base body styles */
+body {
+  @apply text-[1.5rem] bg-[#fff] text-gray-400 font-barlow leading-normal relative;
+}
+
+/* Page container */
+.page-container {
+  @apply min-h-screen md:container mx-auto lg:px-[3rem] pb-40;
+}
+
+/* Header styles */
+header {
+  @apply fixed z-10 top-0 right-0 left-0 md:static bg-[#fff] h-24 md:h-[9rem] border-b-[.1rem] border-slate-200 md:mb-32;
+}
+
+/* Navigation container */
+.nav-container {
+  @apply h-full w-full flex justify-between px-5 lg:px-0;
+}
+
+/* Logo and menu wrapper */
+.nav-menu-logo {
+  @apply flex items-center gap-8;
+}
+
+.nav-left {
+  @apply flex items-center h-full gap-4;
+}
+
+/* Logo styles */
+.logo {
+  @apply h-[3rem] md:h-[4rem]  flex justify-center items-center;
+}
+
+.logo img {
+  @apply w-full;
+}
+
+/* Mobile menu icon */
+.nav-menu {
+  @apply md:hidden cursor-pointer;
+}
+
+/* Navigation bar */
+.nav-bar {
+  @apply absolute md:static top-0 left-0 bottom-0 h-svh md:h-full w-full md:w-auto bg-black-75 z-10 md:z-0 md:bg-transparent hidden md:block;
+}
+
+.nav-bar.show {
+  @apply block;
+}
+
+/* Close mobile menu icon */
+#close-nav-menu {
+  @apply mb-8 md:hidden;
+}
+
+.close-nav-menu {
+  @apply cursor-pointer;
+}
+
+/* Navigation styles */
+nav {
+  @apply w-[70%] p-16 md:p-0 text-gray-800 md:text-gray-400 bg-white md:bg-transparent flex flex-col md:flex-row h-full md:w-auto;
+}
+
+nav ul {
+  @apply flex flex-col items-start md:flex-row md:items-center gap-8 mt-10 md:mt-0;
+}
+
+nav > ul > li {
+  @apply h-full flex items-center hover:text-gray-800 md:font-normal font-bold;
+}
+
+/* Active navigation link */
+.active {
+  @apply border-b-[.3rem] border-orange-500;
+}
+
+/* Cart and profile section */
+.cart-profile {
+  @apply flex justify-end items-center gap-5 md:gap-14;
+}
+
+/* Cart icon */
+.cart {
+  @apply h-6 md:h-[1.8rem] relative;
+}
+
+.cart img {
+  @apply h-full;
+}
+
+/* Cart quantity indicator */
+.cart-quantity {
+  @apply absolute top-[-1rem] right-[-1rem] text-[1rem] px-3 bg-orange-500 text-white text-center rounded-2xl font-bold flex justify-center items-center;
+}
+
+/* Cart dropdown menu */
+.cart-dropdown {
+  @apply absolute bg-white z-10 w-[30rem] h-80 rounded-2xl shadow-lg hidden top-24 right-8 md:top-20 md:right-20 md:translate-x-0;
+}
+
+.cart-dropdown.show {
+  @apply block;
+}
+
+/* Cart title */
+.cart-title {
+  @apply text-gray-800 font-semibold text-[2rem] border-b-2 px-8 h-20 flex items-center;
+}
+
+/* Cart details */
+.cart-details {
+  @apply flex flex-col justify-center items-center h-60 px-7 gap-8;
+}
+
+.cart-details > p {
+  @apply text-gray-500 font-semibold text-center;
+}
+
+/* Cart item */
+.cart-item {
+  @apply h-20 w-full flex gap-6;
+}
+
+.cart-item img {
+  @apply rounded-lg h-full;
+}
+
+.cart-item strong {
+  @apply text-gray-700 font-semibold;
+}
+
+/* Checkout button */
+.checkout {
+  @apply bg-orange-500 text-black py-4 w-full text-center rounded-lg font-[500] flex items-center justify-center gap-4 hover:opacity-70 transition-opacity ease-in-out duration-300;
+}
+
+/* User avatar */
+.img-avatar {
+  @apply h-10 md:h-[4rem] md:border-2 border-orange-400 rounded-full;
+}
+
+/* Product section */
+.product-page {
+  @apply min-h-[50vh] flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-8 md:px-4 md:items-center mt-[5.5rem] md:mt-0;
+}
+
+/* Product images */
+.product-images {
+  @apply md:w-[50%] flex flex-col md:items-center gap-12;
+}
+
+#product-images {
+  @apply relative;
+}
+
+.selected-sneaker {
+  @apply w-[100%] md:max-w-[40rem] md:max-h-[40rem] md:rounded-3xl;
+}
+
+.selected-sneaker > img {
+  @apply w-[100%] h-full md:rounded-3xl;
+}
+
+#product-images .selected-sneaker > img {
+  @apply lg:hover:opacity-60 lg:cursor-pointer;
+}
+
+/* Thumbnails */
+.thumbnails {
+  @apply hidden md:flex justify-center gap-8;
+}
+
+.thumbnail-wrapper {
+  @apply w-[7rem] h-[7rem] rounded-xl;
+}
+
+.thumbnails img {
+  @apply w-full h-full cursor-pointer rounded-xl hover:opacity-40 transition-opacity duration-300;
+}
+
+.thumbnail-wrapper:hover img,
+.thumbnail-wrapper.thumbnails-active img {
+  @apply opacity-60;
+}
+
+.thumbnails-active {
+  @apply border-2 border-orange-400 bg-white;
+}
+
+/* Product navigation buttons */
+.products-buttons {
+  @apply absolute top-[50%] transform translate-y-[-50%] w-full flex justify-between px-4 md:hidden;
+}
+
+.products-buttons button {
+  @apply text-gray-800 bg-white w-16 h-16 rounded-full hover:text-orange-500 text-center;
+}
+
+/* Product details */
+.product-details {
+  @apply px-6 md:px-0 md:w-[50%] md:pr-0 lg:pr-[15rem] flex flex-col items-start gap-4 md:gap-8;
+}
+
+.product-details h3 {
+  @apply uppercase font-[600] text-[1.2rem];
+}
+
+.product-details h1 {
+  @apply text-[2.6rem] md:text-[4rem] text-gray-800 font-semibold leading-none md:mb-8;
+}
+
+/* Product price */
+.product-price {
+  @apply flex items-center flex-wrap gap-4 md:gap-2 mb-4 w-full md:w-auto;
+}
+
+.discounted-price {
+  @apply text-[2.4rem] text-gray-800 font-semibold md:w-[50%];
+}
+
+.discount {
+  @apply bg-gray-800 text-slate-50 px-3 py-1 text-center rounded-lg md:self-center;
+}
+
+.original-price {
+  @apply line-through w-[50%] text-right md:text-left;
+}
+
+/* Add to cart section */
+.add-cart {
+  @apply w-full flex flex-col sm:flex-row gap-6;
+}
+
+.quantity {
+  @apply bg-slate-200 w-full sm:w-1/2 md:w-40 text-center py-2 rounded-lg px-6 font-bold flex justify-between;
+}
+
+.quantity button {
+  @apply text-orange-500 text-[1.8rem] hover:opacity-50;
+}
+
+#quantity {
+  @apply mx-8 text-gray-800 p-2;
+}
+
+.add-to-cart {
+  @apply bg-orange-500 text-black py-4 sm:w-1/2 md:w-[22rem] text-center rounded-lg font-[500] flex items-center justify-center gap-4 hover:opacity-70 transition-opacity ease-in-out duration-300;
+}
+
+/* Product images overlay */
+.product-images-overlay {
+  @apply w-[100%] h-full absolute top-0 left-0  bg-black-75 justify-center items-center hidden;
+}
+
+.close-overlay {
+  @apply w-[100%] max-w-[40rem] text-right text-white hover:text-orange-500;
+}
+
+.product-images-overlay .product-images {
+  @apply relative;
+}
+
+/* Overlay navigation buttons */
+.overlay-buttons {
+  @apply absolute top-[50%] transform translate-y-[-50%] max-w-[45rem] w-full flex justify-between;
+}
+
+.overlay-buttons button {
+  @apply text-gray-800 bg-white w-16 h-16 rounded-full hover:text-orange-500 text-center;
+}
+
+.remove-item {
+  @apply hover:text-orange-500;
+}
+
+/* Popup notifications */
+.popup {
+  @apply fixed top-[2rem] right-[2rem] bg-green-500 text-white p-[1rem] rounded-lg z-20 shadow-lg bg-opacity-90 hidden;
+}
+
+.popup.show {
+  display: block;
+}
+
+.remove-popup {
+  @apply fixed top-[2rem] right-[2rem] bg-red-500 text-white p-[1rem] rounded-lg z-20 shadow-lg bg-opacity-90 hidden;
+}
+
+.remove-popup.show {
+  display: block;
+}
+
+/* Footer styles */
+footer {
+  @apply w-full absolute bottom-8 left-[50%] transform translate-x-[-50%] flex justify-center items-center gap-4;
+}
+
+/* Attribution styles */
+.attribution {
+  @apply text-center text-[1.2rem];
+}
+
+.attribution a {
+  @apply text-[#3e52a3];
+}

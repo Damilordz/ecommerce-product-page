@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures the website displays properly on different devices -->
+
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" />
+
+    <title>E-commerce product page</title>
+
+    <link rel="stylesheet" href="./tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/127922d8a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Header Section -->
+      <header>
+        <div class="nav-container">
+          <div class="nav-menu-logo">
+            <div class="nav-left">
+              <!-- Mobile Menu Icon -->
+              <div class="nav-menu">
+                <i class="fa-solid fa-bars fa-lg" id="nav-menu"></i>
+              </div>
+              <!-- Logo -->
+              <div class="logo">
+                <a href="#"><img src="./images/logo.png" alt="Logo" /></a>
+              </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-bar">
+              <nav>
+                <div id="close-nav-menu">
+                  <i class="fa-solid fa-xmark close-nav-menu"></i>
+                </div>
+                <ul>
+                  <li><a href="#">Collections</a></li>
+                  <li><a href="#">Men</a></li>
+                  <li><a href="#">Women</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Cart and User Profile Section -->
+          <div class="cart-profile">
+            <div class="cart">
+              <a href="#"
+                ><img
+                  src="./images/icon-cart.png"
+                  alt="Cart"
+                  class="cart-icon"
+              /></a>
+
+              <div class="cart-quantity"></div>
+            </div>
+
+            <!-- Cart Dropdown Menu -->
+            <div class="cart-dropdown" id="cart-dropdown">
+              <div class="cart-title">
+                <h3>Cart</h3>
+              </div>
+              <div class="cart-details" id="cart-details">
+                <p>Your cart is empty.</p>
+              </div>
+            </div>
+
+            <!-- User Avatar -->
+            <div class="image-avatar">
+              <a href="#"
+                ><img
+                  src="./images/image-avatar.png"
+                  alt="user"
+                  class="img-avatar"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Product Page Section -->
+      <section class="product-page">
+        <!-- Product Images Section -->
+        <div class="product-images" id="product-images">
+          <div class="selected-sneaker">
+            <img
+              id="selected-sneaker"
+              src="./images/image-product-1.jpg"
+              alt="Sneaker"
+            />
+          </div>
+          <div class="thumbnails">
+            <div class="thumbnail-wrapper thumbnails-active" data-num="1">
+              <img
+                src="./images/thumbnails/image-product-1-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="2">
+              <img
+                src="./images/thumbnails/image-product-2-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="3">
+              <img
+                src="./images/thumbnails/image-product-3-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="4">
+              <img
+                src="./images/thumbnails/image-product-4-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+          </div>
+          <!-- Product Navigation Buttons -->
+          <div class="products-buttons">
+            <button id="prevButton" class="prevButton">
+              <i class="fa-solid fa-chevron-left fa-lg"></i>
+            </button>
+            <button id="nextButton" class="nextButton">
+              <i class="fa-solid fa-chevron-right fa-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Details Section -->
+        <div class="product-details">
+          <div>
+            <h3>Sneaker Company</h3>
+            <h1>Fall Limited Edition Sneakers</h1>
+          </div>
+          <div class="product-info">
+            <p>
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+          <!-- Product Pricing -->
+          <div class="product-price">
+            <span class="discounted-price">£125.00</span>
+            <span class="discount">50%</span>
+            <span class="original-price">£250.00</span>
+          </div>
+          <!-- Add to Cart Section -->
+          <div class="add-cart">
+            <div class="quantity">
+              <button class="decrement">-</button>
+              <span id="quantity" contenteditable="true">0</span>
+              <button class="increment">+</button>
+            </div>
+
+            <button class="add-to-cart">
+              <i class="fa-solid fa-cart-plus"></i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Image Overlay for Larger View -->
+      <div class="product-images-overlay">
+        <div class="product-images">
+          <div class="close-overlay">
+            <i class="fa-solid fa-xmark fa-xl cursor-pointer"></i>
+          </div>
+          <div class="selected-sneaker">
+            <img
+              id="selected-sneaker"
+              src="./images/image-product-1.jpg"
+              alt="Sneaker"
+            />
+          </div>
+          <div class="thumbnails">
+            <div class="thumbnail-wrapper thumbnails-active" data-num="1">
+              <img
+                src="./images/thumbnails/image-product-1-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="2">
+              <img
+                src="./images/thumbnails/image-product-2-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="3">
+              <img
+                src="./images/thumbnails/image-product-3-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+            <div class="thumbnail-wrapper" data-num="4">
+              <img
+                src="./images/thumbnails/image-product-4-thumbnail.jpg"
+                alt="Sneaker Thumbnail"
+              />
+            </div>
+          </div>
+          <!-- Overlay Navigation Buttons -->
+          <div class="overlay-buttons">
+            <button id="prevButton" class="prevButton">
+              <i class="fa-solid fa-chevron-left fa-lg"></i>
+            </button>
+            <button id="nextButton" class="nextButton">
+              <i class="fa-solid fa-chevron-right fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup Notifications -->
+      <div id="popup" class="popup">Item added to cart successfully!</div>
+      <div id="remove-popup" class="remove-popup">Item removed!</div>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a
+            href="https://www.linkedin.com/in/adebowaleemmanuel/"
+            target="_blank"
+            >Damilola Emmanuel</a
+          >.
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
